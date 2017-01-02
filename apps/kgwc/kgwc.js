@@ -2,14 +2,17 @@ import React from "react";
 import ReactDOM from "react-dom";
 
 class Tester extends React.Component {
+
+	constructor() {
+			super();
+			this.state = { data: ["a1","a2","a3","a4"] };
+	}
 	render() {
 		return (
 			<div>
 				<h2>Ordered List</h2>
 				<ol>
-					<li>test1</li>
-					<li>test2</li>
-					<li>test3</li>
+					{this.state.data.map(text => <li>{text}</li>)}
 				</ol>
 			</div>
 		);
